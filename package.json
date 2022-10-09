@@ -9,6 +9,10 @@
   },
   "author": "Georgiy Tarasov <gtarasov.work@gmail.com>",
   "license": "MIT",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
   "devDependencies": {
     "@react-native-community/eslint-config": "^3.1.0",
     "@types/react": "^18.0.20",
