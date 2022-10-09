@@ -69,10 +69,10 @@ export function RenderComponent5Ver2() {
   return <Component5 />;
 }
 
-const Component6 = styled(View)<{ $ratio?: number }>((props) => ({
+const Component6 = styled(View)(() => ({
   variants: {
     square: {
-      aspectRatio: props.$ratio || 1,
+      aspectRatio: 1,
     },
   },
 }));
@@ -83,4 +83,20 @@ export function RenderComponent6Ver1() {
 
 export function RenderComponent6Ver2() {
   return <Component6 />;
+}
+
+const Component7 = styled(View)<{ $ratio: number }>((props) => ({
+  variants: {
+    square: {
+      aspectRatio: props.$ratio,
+    },
+  },
+}));
+
+export function RenderComponent7Ver1() {
+  return <Component7 $ratio={1} variant="square" />;
+}
+
+export function RenderComponent7Ver2() {
+  return <Component7 $ratio={1} />;
 }

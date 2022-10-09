@@ -1,2 +1,3 @@
 export { styled } from './garments';
-export { Theme, ThemeContext, useTheme, ThemeProvider } from './context';
+export { useTheme, ThemeProvider } from './context';
+export type { Theme, ThemeContext, ThemeColorScheme } from './context';
