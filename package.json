@@ -1,11 +1,12 @@
 {
   "name": "@garments/react-native",
   "version": "0.1.0",
-  "description": "",
+  "description": "styled-components for React Native optimized for performance.",
   "main": "dist/commonjs/index.js",
   "scripts": {
     "build": "bob build",
-    "prepare": "bob build"
+    "prepare": "bob build",
+    "release": "release-it"
   },
   "author": "Georgiy Tarasov <gtarasov.work@gmail.com>",
   "license": "MIT",
@@ -14,15 +15,23 @@
     "react-native": "*"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@react-native-community/eslint-config": "^3.1.0",
+    "@release-it/conventional-changelog": "^5.1.1",
     "@types/react": "^18.0.20",
     "@types/react-native": "^0.70.1",
     "eslint": "^8.25.0",
+    "husky": "^8.0.1",
     "prettier": "^2.7.1",
     "react": "^18.2.0",
     "react-native": "^0.70.2",
     "react-native-builder-bob": "^0.18.3",
+    "release-it": "^15.5.0",
     "typescript": "^4.9.0-dev.20221007"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
   },
   "react-native": "src/index.tsx",
   "module": "dist/module/index.js",
@@ -42,6 +51,47 @@
       "module",
       "typescript"
     ]
+  },
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release ${version}",
+      "tagName": "v${version}"
+    },
+    "npm": {
+      "publish": true
+    },
+    "github": {
+      "release": true
+    },
+    "plugins": {
+      "@release-it/conventional-changelog": {
+        "preset": {
+          "name": "conventionalcommits",
+          "types": [
+            {
+              "type": "feat",
+              "section": "Features"
+            },
+            {
+              "type": "fix",
+              "section": "Bug Fixes"
+            },
+            {
+              "type": "perf",
+              "section": "Performance Improvements"
+            },
+            {
+              "type": "chore(deps)",
+              "section": "Dependency Upgrades"
+            },
+            {
+              "type": "docs",
+              "section": "Documentation"
+            }
+          ]
+        }
+      }
+    }
   },
   "eslintIgnore": [
     "node_modules/",
