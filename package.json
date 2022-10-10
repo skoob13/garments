@@ -3,6 +3,9 @@
   "version": "0.1.1",
   "description": "styled-components for React Native optimized for performance.",
   "main": "dist/commonjs/index.js",
+  "react-native": "src/index.tsx",
+  "module": "dist/module/index.js",
+  "types": "dist/typescript/index.d.ts",
   "scripts": {
     "build": "bob build",
     "prepare": "bob build",
@@ -34,9 +37,6 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "react-native": "src/index.tsx",
-  "module": "dist/module/index.js",
-  "types": "dist/typescript/src/index.d.ts",
   "files": [
     "src",
     "dist",
