@@ -31,7 +31,8 @@
     "typescript": "^4.9.0-dev.20221007"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "react-native": "src/index.tsx",
   "module": "dist/module/index.js",
